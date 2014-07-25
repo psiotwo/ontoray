@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             version="2.0">
+    <portlet>
+        <portlet-name>liferay-taxonomy-manager</portlet-name>
+        <display-name>Liferay Taxonomy Manager Portlet (DISPLAY NAME)</display-name>
+        <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+        <init-param>
+            <name>javax.portlet.faces.defaultViewId.view</name>
+            <value>/views/view.xhtml</value>
+        </init-param>
+        <expiration-cache>0</expiration-cache>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+        </supports>
+        <portlet-info>
+            <title>Liferay Taxonomy Manager (PORTLET INFO TITLE)</title>
+            <short-title>liferay Taxonomy (PORTLET INFO SHORT TITLE)</short-title>
+            <keywords>Taxonomy</keywords>
+        </portlet-info>
+        <security-role-ref>
+            <role-name>taxonomy-manager</role-name>
+        </security-role-ref>
+    </portlet>
+</portlet-app>

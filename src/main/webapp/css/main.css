@@ -1,0 +1,22 @@
+/*.ui-helper-hidden {*/
+    /*display:none !important;*/
+/*}*/
+
+.aui .ui-helper-hidden {
+    display: none;
+}
+
+.topAlign100 {
+    vertical-align: top;
+    width: 200px;
+}
+
+.topAlignRest {
+    vertical-align: top;
+    width: 800px;
+}
+
+.topAlignRest > ul {
+    vertical-align: top;
+    width: 100%;
+}

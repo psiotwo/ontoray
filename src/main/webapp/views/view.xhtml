@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<f:view
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        >
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:outputText value="#{i18n['ontoray.title']}"/>
+        <h:form id="frmReport" enctype="multipart/form-data">
+            <p:panel header="#{i18n['ontoray.importvocabulary.title']}">
+                <p:fileUpload value="#{bbtaxonomymanager.file}" mode="simple" />
+                <p:commandButton value="#{i18n['ontoray.loadfromfile.submit']}" ajax="false" actionListener="#{bbtaxonomymanager.upload}" />
+            </p:panel>
+        </h:form>
+    </h:body>
+</f:view>

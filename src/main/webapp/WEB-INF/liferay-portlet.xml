@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
+
+<liferay-portlet-app>
+    <portlet>
+        <portlet-name>liferay-taxonomy-manager</portlet-name>
+        <instanceable>false</instanceable>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
+        <ajaxable>true</ajaxable>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+    </portlet>
+
+    <role-mapper>
+        <role-name>taxonomy-manager</role-name>
+        <role-link>Taxonomy Manager</role-link>
+    </role-mapper>
+
+</liferay-portlet-app>
