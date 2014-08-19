@@ -15,6 +15,7 @@ import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.portlet.asset.model.AssetCategory;
 import com.liferay.portlet.asset.model.AssetVocabulary;
@@ -22,8 +23,10 @@ import com.liferay.portlet.asset.service.AssetCategoryLocalServiceUtil;
 import com.liferay.portlet.asset.service.AssetVocabularyLocalServiceUtil;
 import org.primefaces.model.UploadedFile;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import java.io.IOException;
 import java.net.URI;
 import java.text.DateFormat;
@@ -52,6 +55,9 @@ public class BBTaxonomyManager {
                 transformToCategories(mdl);
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+                FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Error during file processing: '" + e.getMessage() + "'. See stacktrace for details."));
             }
         }
     }
@@ -61,7 +67,11 @@ public class BBTaxonomyManager {
             final ServiceContext serviceContext = LiferayFacesContext.getInstance().getServiceContext();
             final String testonto = escapeForAssetString("GEN " + DateFormat.getTimeInstance().format(Calendar.getInstance().getTime()));
 
-            final User user = PortalUtil.getUser(LiferayFacesContext.getInstance().getPortletRequest());
+            User user = PortalUtil.getUser(LiferayFacesContext.getInstance().getPortletRequest());
+
+            if ( user == null ) {
+                user = UserLocalServiceUtil.getDefaultUser(PortalUtil.getDefaultCompanyId());
+            }
 
             Map<Locale, String> titleMap = new HashMap<Locale, String>();
             ensureNotEmpty(titleMap,testonto);

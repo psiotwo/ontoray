@@ -22,8 +22,5 @@
             <short-title>liferay Taxonomy (PORTLET INFO SHORT TITLE)</short-title>
             <keywords>Taxonomy</keywords>
         </portlet-info>
-        <security-role-ref>
-            <role-name>taxonomy-manager</role-name>
-        </security-role-ref>
     </portlet>
 </portlet-app>

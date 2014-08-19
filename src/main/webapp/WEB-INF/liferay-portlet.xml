@@ -9,10 +9,4 @@
         <ajaxable>true</ajaxable>
         <header-portlet-css>/css/main.css</header-portlet-css>
     </portlet>
-
-    <role-mapper>
-        <role-name>taxonomy-manager</role-name>
-        <role-link>Taxonomy Manager</role-link>
-    </role-mapper>
-
 </liferay-portlet-app>
