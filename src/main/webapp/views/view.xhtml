@@ -10,6 +10,10 @@
         <h:outputText value="#{i18n['ontoray.title']}"/>
         <h:form id="frmReport" enctype="multipart/form-data">
             <p:panel header="#{i18n['ontoray.importvocabulary.title']}">
+                <p:selectOneRadio id="inputType" value="#{bbtaxonomymanager.inputType}">
+                    <f:selectItem itemLabel="OWL Class Hierarchy" itemValue="owl" />
+                    <f:selectItem itemLabel="SKOS Terminology" itemValue="skos" />
+                </p:selectOneRadio>
                 <p:fileUpload value="#{bbtaxonomymanager.file}" mode="simple" />
                 <p:commandButton value="#{i18n['ontoray.loadfromfile.submit']}" ajax="false" actionListener="#{bbtaxonomymanager.upload}" />
             </p:panel>
