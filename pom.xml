@@ -15,7 +15,7 @@
         <liferay.auto.deploy.dir>${liferay.app.server.portal.dir}/deploy</liferay.auto.deploy.dir>
         <liferay.app.server.deploy.dir>${liferay.auto.deploy.dir}</liferay.app.server.deploy.dir>
         <liferay.app.server.lib.global.dir>${liferay.app.server.portal.dir}/tomcat-7.0.42/lib</liferay.app.server.lib.global.dir>
-        <spring.version>5.2.8.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
         <liferay-faces.version>3.2.4-ga5</liferay-faces.version>
         <primefaces.version>5.0</primefaces.version>
         <jsf.version>2.1.29</jsf.version>
